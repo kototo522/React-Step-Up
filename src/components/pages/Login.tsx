@@ -1,6 +1,7 @@
 import { AccordionPanel } from "@chakra-ui/react";
 import { VFC, memo } from "react";
 import { Flex, Box, Heading, Divider, Input, Button, Stack } from "@chakra-ui/react";
+import { PrimaryButton } from "../atoms/button/PrimaryButton";
 
 export const Login: VFC = memo(() => {
     return(
@@ -10,9 +11,7 @@ export const Login: VFC = memo(() => {
                 <Divider my={4} />
                 <Stack spacing={6} py={4} px={10}>
                     <Input placeholder="ユーザーID"/>
-                    <Button bg="teal.400" color="white" _hover={{ opacity: 0.8 }}>
-                        ログイン
-                    </Button>
+                    <PrimaryButton>ログイン</PrimaryButton>
                 </Stack>
             </Box>
         </Flex>
