@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import { useCallback, useState } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
@@ -12,9 +11,7 @@ export const useAuth = () => {
   const [loading, setLoading] = useState(false);
 
   const login = useCallback((id: string) => {
-    (id: string) => {
         setLoading(true);
-    }
 
     axios
       .get<User>(`https://jsonplaceholder.typicode.com/users/${id}`)
@@ -29,5 +26,5 @@ export const useAuth = () => {
       .catch(() => showMessage({ title: "ログインできません", status: "error" }))
   }, [history, showMessage]);
 
-  return { login };
+  return { login, loading };
 };
