@@ -4,7 +4,7 @@ import { Login } from "../components/pages/Login";
 import { homeRoutes } from "./HomeRoutes"
 import { Page404 } from "../components/pages/page404";
 import { HeaderLayout} from "../components/templates/HeaderLayout"
-export const Router: VFC = memo(() => {
+export const Router = memo(() => {
     return(
         <Switch>
             <Route exact path = "/">

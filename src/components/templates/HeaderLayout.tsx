@@ -12,7 +12,7 @@ export const HeaderLayout: VFC<Props> = memo((props) => {
     return(
         <>
             <Header />
-            {}
+            { children }
         </>
     )
 });

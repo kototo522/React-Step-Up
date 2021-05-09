@@ -6,11 +6,11 @@ export const UserManagement: VFC = memo(() => {
     return(
         <Wrap p={{ base: 4, md: 10 }}>
             <WrapItem>
-                {/* <UserCard
-                    imageUrl="https://source.unplash.com/random"
+                <UserCard
+                    imageUrl="https://source.unsplash.com/random"
                     userName="ことりん"
-                    fullName="yoshimoto kotoha"
-                /> */}
+                    fullName="yosimoto kotoha"
+                />
             </WrapItem>
         </Wrap>
     );
