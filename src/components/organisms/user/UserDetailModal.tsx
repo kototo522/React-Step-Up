@@ -4,17 +4,18 @@ import {
     WrapItem,Wrap, Spinner, Center, Modal, ModalOverlay, ModalContent,
     useDisclosure, ModalHeader, ModalCloseButton, ModalBody, FormControl, FormLabel, Input
     } from "@chakra-ui/react";
+import { User } from "../../../types/api/User";
 
 type Props = {
+    user:  User | null;
     isOpen: boolean;
     onClose: () => void;
 };
 
 export const UserDetailModal: VFC<Props> = memo(props => {
-  const { isOpen, onClose } = props;
+  const { user, isOpen, onClose } = props;
 
   return (
-    <>
     <Modal
         isOpen={isOpen}
         onClose={onClose}
@@ -29,24 +30,23 @@ export const UserDetailModal: VFC<Props> = memo(props => {
                 <Stack spacing={4}>
                     <FormControl>
                         <FormLabel>名前</FormLabel>
-                        <Input value="Kottlin" isReadOnly />
+                        <Input value={user?.username} isReadOnly />
                     </FormControl>
                     <FormControl>
                         <FormLabel>フルネーム</FormLabel>
-                        <Input value="Kotoha Yosimoto" isReadOnly />
+                        <Input value={user?.name} isReadOnly />
                     </FormControl>
                     <FormControl>
                         <FormLabel>MAIL</FormLabel>
-                        <Input value="1234@mail.com" isReadOnly />
+                        <Input value={user?.email} isReadOnly />
                     </FormControl>
                     <FormControl>
                     <FormLabel>TEL</FormLabel>
-                        <Input value="090-8872-0000" isReadOnly />
+                        <Input value={user?.phone} isReadOnly />
                     </FormControl>
                 </Stack>
             </ModalBody>
         </ModalContent>
     </Modal>
-    </>
   );
 });
